@@ -1,0 +1,19 @@
+<!--<input type="hidden">{$partyid}</input>-->
+<script>
+    if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+        var loadDateTime = new Date();
+        window.setTimeout(function() {
+                var timeOutDateTime = new Date();
+                if (timeOutDateTime - loadDateTime < 5000) {
+                    window.location = "http://www.sina.cn";
+                } else {
+                    window.close();
+                }
+            },
+            5000);
+        var partyid = '{$partyid}';
+        window.location = "iParty://?type=partyid&partyid=" + partyid;
+    } else if (navigator.userAgent.match(/android/i)) {
+        alert("抱歉,app暂不支持安卓设备!");
+    }
+</script>
